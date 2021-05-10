@@ -6,6 +6,8 @@
   border-radius: 4px;
 }
 
-.Button.active {
-  background: hotpink;
+.Button.disabled {
+  pointer-events: none;
+  opacity: 0.65;
+  cursor: not-allowed;
 }
