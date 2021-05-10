@@ -1,11 +1,11 @@
 import * as React from 'react'
 import './Header.css'
 
-export default ({ isBackButtonVisible }) => {
+export default ({ children, isBackButtonVisible }) => {
   return (
     <header className="Header">
       <button hidden={!isBackButtonVisible}>&lt;</button>
-      Home
+      {children}
     </header>
   )
 }
