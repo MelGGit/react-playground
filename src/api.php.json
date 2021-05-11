@@ -1,0 +1,86 @@
+[
+  {
+    "category": "Entertainment: Music",
+    "type": "multiple",
+    "difficulty": "medium",
+    "question": "Saul Hudson (Slash) of the band Guns N&#039; Roses is known for playing what type of guitar?",
+    "correct_answer": "Les Paul Standard",
+    "incorrect_answers": [
+      "Fender Stratocaster",
+      "LsL Mongrel",
+      "Gretsch Falcon"
+    ]
+  },
+  {
+    "category": "Entertainment: Music",
+    "type": "multiple",
+    "difficulty": "medium",
+    "question": "Which popular rock band has a one-armed drummer?",
+    "correct_answer": "Def Leppard",
+    "incorrect_answers": ["The Beatles", "Lynyrd Skynyrd", "Foreigner"]
+  },
+  {
+    "category": "Entertainment: Video Games",
+    "type": "multiple",
+    "difficulty": "medium",
+    "question": "In Forza Motorsport 6, which of these track-exclusive cars was NOT featured in the game, either originally with the game or added as DLC?",
+    "correct_answer": "Aston Martin Vulcan",
+    "incorrect_answers": ["Ferrari FXX-K", "McLaren P1 GTR", "Lotus E23"]
+  },
+  {
+    "category": "Entertainment: Video Games",
+    "type": "multiple",
+    "difficulty": "medium",
+    "question": "In Fallout 4, which type of power armor is first encountered in the early mission &quot;When Freedom Calls&quot; in a crashed Vertibird?",
+    "correct_answer": "T-45",
+    "incorrect_answers": ["T-51", "T-60", "X-01"]
+  },
+  {
+    "category": "Entertainment: Video Games",
+    "type": "multiple",
+    "difficulty": "medium",
+    "question": "Who created the pump &quot;F.L.U.D.D.&quot; Mario uses in Super Mario Sunshine?",
+    "correct_answer": "Elvin Gadd",
+    "incorrect_answers": ["Robert Fludd", "Nirona", "Crygor"]
+  },
+  {
+    "category": "Entertainment: Video Games",
+    "type": "multiple",
+    "difficulty": "easy",
+    "question": "Which of the following characters is NOT a female marriage candidate in the game Stardew Valley?",
+    "correct_answer": "Caroline",
+    "incorrect_answers": ["Abigail", "Haley", "Leah"]
+  },
+  {
+    "category": "Entertainment: Video Games",
+    "type": "multiple",
+    "difficulty": "easy",
+    "question": "What is the maximum HP in Terraria?",
+    "correct_answer": "500",
+    "incorrect_answers": ["400", "1000", "100"]
+  },
+  {
+    "category": "Science: Computers",
+    "type": "multiple",
+    "difficulty": "medium",
+    "question": "Which of the following is a personal computer made by the Japanese company Fujitsu?",
+    "correct_answer": "FM-7",
+    "incorrect_answers": ["PC-9801", "Xmillennium ", "MSX"]
+  },
+  {
+    "category": "Entertainment: Video Games",
+    "type": "multiple",
+    "difficulty": "medium",
+    "question": "In &quot;Call Of Duty: Zombies&quot;, which map introduced the perk &quot;PhD Flopper&quot;?",
+    "correct_answer": "Ascension",
+    "incorrect_answers": ["Moon", "Call Of The Dead", "Die Rise"]
+  },
+  {
+    "category": "History",
+    "type": "multiple",
+    "difficulty": "hard",
+    "question": "Which of these theoretical phycisists first predicted the existence of antimatter?",
+    "correct_answer": "Paul Dirac",
+    "incorrect_answers": ["Niels Bohr", "Albert Einstein", "Werner Heisenberg"]
+  }
+]
