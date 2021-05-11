@@ -6,8 +6,9 @@ import Pagination from './Pagination'
 export default () => {
   return (
     <div>
-      <Card title="Hello" checked />
-      <Card title="Hello" />
+      <Pagination totalPages={34} currentPage={1} />
+      <Pagination totalPages={34} currentPage={2} />
+      <Pagination totalPages={34} currentPage={34} />
     </div>
   )
 }
