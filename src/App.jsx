@@ -4,10 +4,15 @@ import Header from './Header'
 import Pagination from './Pagination'
 import trivia from './api.php.json'
 import './App.css'
+import Navigation from './Navigation'
+
+const navText = ['Home', 'About', 'Settings']
 
 export default () => {
   return (
     <div className="App">
+      <Navigation navButtons={navText} clicked="About" />
+
       {trivia.map(el => {
         const { category, question, correct_answer, incorrect_answers } = el
         return (
