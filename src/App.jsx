@@ -3,46 +3,85 @@ import { v4 as uuidv4 } from 'uuid'
 import './App.css'
 
 export default () => {
-  const [todos, setTodos] = useState([])
+  const [size, setSize] = useState(100)
+  const [radius, setRadius] = useState(0)
+  const [rotation, setRotation] = useState(0)
+  const [translateX, setTranslateX] = useState(0)
+  const [color, setColor] = useState()
+
+  const style = {
+    width: size + 'px',
+    height: size + 'px',
+    borderRadius: radius + '%',
+    rotate: rotation + 'deg',
+    backgroundColor: '#' + color,
+    transform: `translateX(${translateX}vh)`,
+  }
 
   return (
     <div className="App">
-      <form onSubmit={handleSubmit}>
-        <label>
-          Add todo:
-          <input name="todo" type="text" />
-        </label>
-        <button>Add</button>
-      </form>
-      <ul>
-        {todos.map(({ text, isDone, id }) => (
-          <li key={id} onClick={() => toggleIsDone(id)}>
-            {text} {isDone && '✅'}
-          </li>
-        ))}
-      </ul>
+      <label>
+        Size:{' '}
+        <input
+          value={size}
+          onChange={handleSizeChange}
+          type="range"
+          max="200"
+        />
+      </label>
+      <label>
+        Border-Radius:{' '}
+        <input
+          value={radius}
+          onChange={handleRadiusChange}
+          type="range"
+          max="50"
+        />
+      </label>
+      <label>
+        Rotation:{' '}
+        <input
+          value={rotation}
+          onChange={handleRotationChange}
+          type="range"
+          max="360"
+        />
+      </label>
+      <label>
+        TranslateX:{' '}
+        <input
+          value={translateX}
+          onChange={handleTranslateXChange}
+          type="range"
+          max="100vh"
+        />
+      </label>
+      <button onClick={handleColorChange}>Change Color</button>
+      <div style={style} className="Box" />
     </div>
   )
-
-  function toggleIsDone(id) {
-    const index = todos.findIndex(todo => todo.id === id)
-    const todo = todos[index]
-    setTodos([
-      ...todos.slice(0, index),
-      { ...todo, isDone: !todo.isDone },
-      ...todos.slice(index + 1),
-    ])
+  function handleSizeChange(event) {
+    const input = event.target
+    setSize(input.value)
   }
 
-  function handleSubmit(event) {
-    event.preventDefault()
-    const form = event.target
-    const input = form.elements.todo
+  function handleRadiusChange(event) {
+    const input = event.target.value
+    setRadius(input)
+  }
 
-    // spread operator nimm Inhalte des arrays todo und füge input.value hinzu
-    const newTodo = { text: input.value, isDone: false, id: uuidv4() }
-    setTodos([newTodo, ...todos])
-    form.reset()
-    input.focus()
+  function handleRotationChange(event) {
+    const input = event.target.value
+    setRotation(input)
+  }
+
+  function handleColorChange() {
+    const randomColor = Math.floor(Math.random() * 16777215).toString(16)
+    setColor(randomColor)
+  }
+
+  function handleTranslateXChange(event) {
+    const input = event.target.value
+    setTranslateX(input)
   }
 }
