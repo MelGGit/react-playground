@@ -1,8 +1,0 @@
-.Pagination {
-  display: flex;
-  justify-content: space-between;
-}
-
-.Pagination button[disabled] {
-  opacity: 0.3;
-}

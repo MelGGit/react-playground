@@ -1,30 +1,48 @@
-import * as React from 'react'
-import Card from './Card'
-import Header from './Header'
-import Pagination from './Pagination'
-import trivia from './api.php.json'
+import React, { useState } from 'react'
+import { v4 as uuidv4 } from 'uuid'
 import './App.css'
-import Navigation from './Navigation'
-
-const navText = ['Home', 'About', 'Settings']
 
 export default () => {
+  const [todos, setTodos] = useState([])
+
   return (
     <div className="App">
-      <Navigation navButtons={navText} clicked="About" />
-
-      {trivia.map(el => {
-        const { category, question, correct_answer, incorrect_answers } = el
-        return (
-          <Card
-            key={correct_answer}
-            category={category}
-            question={question}
-            correctAnswer={correct_answer}
-            tagList={incorrect_answers}
-          />
-        )
-      })}
+      <form onSubmit={handleSubmit}>
+        <label>
+          Add todo:
+          <input name="todo" type="text" />
+        </label>
+        <button>Add</button>
+      </form>
+      <ul>
+        {todos.map(({ text, isDone, id }) => (
+          <li key={id} onClick={() => toggleIsDone(id)}>
+            {text} {isDone && '✅'}
+          </li>
+        ))}
+      </ul>
     </div>
   )
+
+  function toggleIsDone(id) {
+    const index = todos.findIndex(todo => todo.id === id)
+    const todo = todos[index]
+    setTodos([
+      ...todos.slice(0, index),
+      { ...todo, isDone: !todo.isDone },
+      ...todos.slice(index + 1),
+    ])
+  }
+
+  function handleSubmit(event) {
+    event.preventDefault()
+    const form = event.target
+    const input = form.elements.todo
+
+    // spread operator nimm Inhalte des arrays todo und füge input.value hinzu
+    const newTodo = { text: input.value, isDone: false, id: uuidv4() }
+    setTodos([newTodo, ...todos])
+    form.reset()
+    input.focus()
+  }
 }
